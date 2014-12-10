@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210100810) do
+ActiveRecord::Schema.define(version: 20141210105803) do
 
   create_table "busyos", force: true do |t|
     t.string   "name"
@@ -64,6 +64,51 @@ ActiveRecord::Schema.define(version: 20141210100810) do
   create_table "partners", force: true do |t|
     t.string   "name"
     t.string   "kihonkeiyaku"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sagyouhoukokus", force: true do |t|
+    t.integer  "sagyoushiji_id"
+    t.integer  "sagyoukakunin_id"
+    t.string   "atena"
+    t.string   "sashidashi"
+    t.integer  "youinjisseki_id"
+    t.text     "jisshinaiyou"
+    t.boolean  "sumi"
+    t.string   "nengetsu"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sagyoukakunins", force: true do |t|
+    t.integer  "sagyouhoukoku_id"
+    t.string   "atena"
+    t.string   "sashidashi"
+    t.boolean  "sumi"
+    t.string   "nengetsu"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sagyoushijis", force: true do |t|
+    t.integer  "itakuhaken_id"
+    t.integer  "sagyouhoukoku_id"
+    t.string   "atena"
+    t.string   "sashidashi"
+    t.text     "jisshinaiyou"
+    t.boolean  "sumi"
+    t.string   "nengetsu"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "youinjissekis", force: true do |t|
+    t.integer  "youinwariate_id"
+    t.integer  "sagyouhoukoku_id"
+    t.string   "kadouhour"
+    t.string   "kadoumin"
+    t.string   "nengetsu"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

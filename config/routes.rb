@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :youinjissekis
+
+  resources :sagyoukakunins
+
+  resources :sagyouhoukokus
+
+  resources :sagyoushijis
+
   resources :youinwariates
 
   resources :partnermembers

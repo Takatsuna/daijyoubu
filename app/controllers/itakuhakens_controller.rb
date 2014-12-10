@@ -11,6 +11,14 @@ class ItakuhakensController < ApplicationController
   # GET /itakuhakens/1.json
   def show
     @youinwariates = @itakuhaken.youinwariates.all
+    
+    #契約開始日の属する月初日もとめる
+    @gessyo = @itakuhaken.start.beginning_of_month
+    #契約終了日の属する月末日もとめる
+    @getsumatsu = @itakuhaken.end.end_of_month
+    #当該期間の月数をもとめる
+    @sa = (@getsumatsu - @gessyo).to_i
+    
   end
 
   # GET /itakuhakens/new

@@ -20,8 +20,8 @@
     <%= f.text_field :kenmei %>
   </div>
   <div class="field">
-    <%= f.label :tantouteam %><br>
-	<%= f.select :tantouteam, {"1G1T" => "1G1T", "1G2T" => "1G2T","4G1T"=>"4G1T"} %>
+    <%= f.label :busyo_id %><br>
+	<%= f.collection_select :busyo_id, Busyo.all, :id, :hyoujiname %>
     
   </div>
   <div class="field">

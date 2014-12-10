@@ -34,6 +34,9 @@
   <strong>Partner:</strong>
   <%= @itakuhaken.partner.name %>
 </p>
-
+<hr>
+<h3>要員割当状況</h3>
+<%= render 'youinwariates/index'%>
+<hr>
 <%= link_to 'Edit', edit_itakuhaken_path(@itakuhaken) %> |
 <%= link_to 'Back', itakuhakens_path %>

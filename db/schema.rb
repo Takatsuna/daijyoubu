@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210064324) do
+ActiveRecord::Schema.define(version: 20141210100810) do
+
+  create_table "busyos", force: true do |t|
+    t.string   "name"
+    t.string   "gl"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "hyoujiname"
+  end
 
   create_table "itakuhakens", force: true do |t|
     t.string   "kessaibango"
@@ -28,7 +36,6 @@ ActiveRecord::Schema.define(version: 20141210064324) do
   create_table "jyucyus", force: true do |t|
     t.string   "pjcode"
     t.string   "kenmei"
-    t.string   "tantouteam"
     t.string   "pm"
     t.datetime "start"
     t.datetime "end"
@@ -36,6 +43,8 @@ ActiveRecord::Schema.define(version: 20141210064324) do
     t.string   "keiyakusyubetsu"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "busyo_id"
+    t.string   "jyucyukessaibango"
   end
 
   create_table "kokyakus", force: true do |t|
@@ -44,9 +53,24 @@ ActiveRecord::Schema.define(version: 20141210064324) do
     t.datetime "updated_at"
   end
 
+  create_table "partnermembers", force: true do |t|
+    t.string   "shimeicode"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "partner_id"
+  end
+
   create_table "partners", force: true do |t|
     t.string   "name"
     t.string   "kihonkeiyaku"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "youinwariates", force: true do |t|
+    t.integer  "itakuhaken_id"
+    t.integer  "partnermember_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

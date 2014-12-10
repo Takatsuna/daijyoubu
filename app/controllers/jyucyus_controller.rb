@@ -70,6 +70,6 @@ class JyucyusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def jyucyu_params
-      params.require(:jyucyu).permit(:pjcode, :kenmei, :tantouteam, :pm, :start, :end, :kokyaku_id, :keiyakusyubetsu)
+      params.require(:jyucyu).permit(:pjcode, :kenmei, :busyo_id, :pm, :start, :end, :kokyaku_id, :keiyakusyubetsu)
     end
 end

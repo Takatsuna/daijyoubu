@@ -10,6 +10,7 @@ class ItakuhakensController < ApplicationController
   # GET /itakuhakens/1
   # GET /itakuhakens/1.json
   def show
+    @youinwariates = @itakuhaken.youinwariates.all
   end
 
   # GET /itakuhakens/new

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :youinwariates
+
+  resources :partnermembers
+
+  resources :busyos
+
   resources :itakuhakens
 
   resources :jyucyus

@@ -1,0 +1,37 @@
+<h1>Listing itakuhakens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kessaibango</th>
+      <th>Kessaikenmei</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Ukeireninzu</th>
+      <th>Jyucyu</th>
+      <th>Partner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @itakuhakens.each do |itakuhaken| %>
+      <tr>
+        <td><%= itakuhaken.kessaibango %></td>
+        <td><%= itakuhaken.kessaikenmei %></td>
+        <td><%= itakuhaken.start %></td>
+        <td><%= itakuhaken.end %></td>
+        <td><%= itakuhaken.ukeireninzu %></td>
+        <td><%= itakuhaken.jyucyu.kenmei %></td>
+        <td><%= itakuhaken.partner.name %></td>
+        <td><%= link_to 'Show', itakuhaken %></td>
+        <td><%= link_to 'Edit', edit_itakuhaken_path(itakuhaken) %></td>
+        <td><%= link_to 'Destroy', itakuhaken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Itakuhaken', new_itakuhaken_path %>

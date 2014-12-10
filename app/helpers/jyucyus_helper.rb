@@ -1,0 +1,2 @@
+module JyucyusHelper
+end

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pjcode: MyString
+  kenmei: MyString
+  tantouteam: MyString
+  pm: MyString
+  start: 2014-12-09 15:45:16
+  end: 2014-12-09 15:45:16
+  kokyaku_id: 1
+  keiyakusyubetsu: MyString
+
+two:
+  pjcode: MyString
+  kenmei: MyString
+  tantouteam: MyString
+  pm: MyString
+  start: 2014-12-09 15:45:16
+  end: 2014-12-09 15:45:16
+  kokyaku_id: 1
+  keiyakusyubetsu: MyString

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pjcode:</strong>
+  <%= @jyucyu.pjcode %>
+</p>
+
+<p>
+  <strong>Kenmei:</strong>
+  <%= @jyucyu.kenmei %>
+</p>
+
+<p>
+  <strong>Tantouteam:</strong>
+  <%= @jyucyu.tantouteam %>
+</p>
+
+<p>
+  <strong>Pm:</strong>
+  <%= @jyucyu.pm %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @jyucyu.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @jyucyu.end %>
+</p>
+
+<p>
+  <strong>Kokyaku:</strong>
+  <%= @jyucyu.kokyaku.name %>
+</p>
+
+<p>
+  <strong>Keiyakusyubetsu:</strong>
+  <%= @jyucyu.keiyakusyubetsu %>
+</p>
+
+<%= link_to 'Edit', edit_jyucyu_path(@jyucyu) %> |
+<%= link_to 'Back', jyucyus_path %>

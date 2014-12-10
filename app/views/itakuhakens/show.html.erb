@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kessaibango:</strong>
+  <%= @itakuhaken.kessaibango %>
+</p>
+
+<p>
+  <strong>Kessaikenmei:</strong>
+  <%= @itakuhaken.kessaikenmei %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @itakuhaken.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @itakuhaken.end %>
+</p>
+
+<p>
+  <strong>Ukeireninzu:</strong>
+  <%= @itakuhaken.ukeireninzu %>
+</p>
+
+<p>
+  <strong>Jyucyu:</strong>
+  <%= @itakuhaken.jyucyu.kenmei %>
+</p>
+
+<p>
+  <strong>Partner:</strong>
+  <%= @itakuhaken.partner.name %>
+</p>
+
+<%= link_to 'Edit', edit_itakuhaken_path(@itakuhaken) %> |
+<%= link_to 'Back', itakuhakens_path %>

@@ -1,0 +1,39 @@
+<h1>Listing jyucyus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pjcode</th>
+      <th>Kenmei</th>
+      <th>Tantouteam</th>
+      <th>Pm</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Kokyaku</th>
+      <th>Keiyakusyubetsu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jyucyus.each do |jyucyu| %>
+      <tr>
+        <td><%= jyucyu.pjcode %></td>
+        <td><%= jyucyu.kenmei %></td>
+        <td><%= jyucyu.tantouteam %></td>
+        <td><%= jyucyu.pm %></td>
+        <td><%= jyucyu.start %></td>
+        <td><%= jyucyu.end %></td>
+        <td><%= jyucyu.kokyaku.name %></td>
+        <td><%= jyucyu.keiyakusyubetsu %></td>
+        <td><%= link_to 'Show', jyucyu %></td>
+        <td><%= link_to 'Edit', edit_jyucyu_path(jyucyu) %></td>
+        <td><%= link_to 'Destroy', jyucyu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jyucyu', new_jyucyu_path %>

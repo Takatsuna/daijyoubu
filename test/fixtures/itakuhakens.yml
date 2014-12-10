@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kessaibango: MyString
+  kessaikenmei: MyString
+  start: 2014-12-10 15:43:24
+  end: 2014-12-10 15:43:24
+  ukeireninzu: MyString
+  jyucyu_id: 1
+  partner_id: 1
+
+two:
+  kessaibango: MyString
+  kessaikenmei: MyString
+  start: 2014-12-10 15:43:24
+  end: 2014-12-10 15:43:24
+  ukeireninzu: MyString
+  jyucyu_id: 1
+  partner_id: 1

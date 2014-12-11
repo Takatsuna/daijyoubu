@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  itakuhaken_id: 1
+  partnermember_id: 1
+
+two:
+  itakuhaken_id: 1
+  partnermember_id: 1

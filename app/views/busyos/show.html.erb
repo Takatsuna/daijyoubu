@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @busyo.name %>
+</p>
+<p>
+  <strong>HyoujiName:</strong>
+  <%= @busyo.hyoujiname %>
+</p>
+
+<p>
+  <strong>Gl:</strong>
+  <%= @busyo.gl %>
+</p>
+
+<%= link_to 'Edit', edit_busyo_path(@busyo) %> |
+<%= link_to 'Back', busyos_path %>

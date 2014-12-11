@@ -1,0 +1,2 @@
+module SagyoushijisHelper
+end

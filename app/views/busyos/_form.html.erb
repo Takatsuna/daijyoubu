@@ -1,0 +1,29 @@
+<%= form_for(@busyo) do |f| %>
+  <% if @busyo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@busyo.errors.count, "error") %> prohibited this busyo from being saved:</h2>
+
+      <ul>
+      <% @busyo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :hyoujiname %><br>
+    <%= f.text_field :hyoujiname %>
+  </div>
+  <div class="field">
+    <%= f.label :gl %><br>
+    <%= f.text_field :gl %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

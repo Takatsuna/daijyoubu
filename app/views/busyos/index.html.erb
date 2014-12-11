@@ -1,0 +1,32 @@
+<h1>Listing busyos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>HyoujiName</th>
+	  
+      <th>Gl</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @busyos.each do |busyo| %>
+      <tr>
+        <td><%= busyo.name %></td>
+        <td><%= busyo.hyoujiname %></td>
+        
+		<td><%= busyo.gl %></td>
+		
+        <td><%= link_to 'Show', busyo %></td>
+        <td><%= link_to 'Edit', edit_busyo_path(busyo) %></td>
+        <td><%= link_to 'Destroy', busyo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Busyo', new_busyo_path %>

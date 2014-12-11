@@ -1,0 +1,22 @@
+
+
+<table>
+  <thead>
+    <tr>
+
+      <th>Partnermember</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @youinwariates.each do |youinwariate| %>
+      <tr>
+
+        <td><%= youinwariate.partnermember.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

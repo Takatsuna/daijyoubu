@@ -1,0 +1,33 @@
+<h1>Listing sagyoukakunins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sagyouhoukoku</th>
+      <th>Atena</th>
+      <th>Sashidashi</th>
+      <th>Sumi</th>
+      <th>Nengetsu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sagyoukakunins.each do |sagyoukakunin| %>
+      <tr>
+        <td><%= sagyoukakunin.sagyouhoukoku_id %></td>
+        <td><%= sagyoukakunin.atena %></td>
+        <td><%= sagyoukakunin.sashidashi %></td>
+        <td><%= sagyoukakunin.sumi %></td>
+        <td><%= sagyoukakunin.nengetsu %></td>
+        <td><%= link_to 'Show', sagyoukakunin %></td>
+        <td><%= link_to 'Edit', edit_sagyoukakunin_path(sagyoukakunin) %></td>
+        <td><%= link_to 'Destroy', sagyoukakunin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sagyoukakunin', new_sagyoukakunin_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Itakuhaken:</strong>
+  <%= @youinwariate.itakuhaken.kessaikenmei %>
+</p>
+
+<p>
+  <strong>Partnermember:</strong>
+  <%= @youinwariate.partnermember.name %>
+</p>
+
+<%= link_to 'Edit', edit_youinwariate_path(@youinwariate) %> |
+<%= link_to 'Back', youinwariates_path %>

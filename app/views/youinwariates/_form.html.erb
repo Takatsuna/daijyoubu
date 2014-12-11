@@ -1,0 +1,26 @@
+<%= form_for(@youinwariate) do |f| %>
+  <% if @youinwariate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@youinwariate.errors.count, "error") %> prohibited this youinwariate from being saved:</h2>
+
+      <ul>
+      <% @youinwariate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :itakuhaken_id %><br>
+	<%= f.collection_select :itakuhaken_id, Itakuhaken.all, :id, :kessaikenmei %>
+  </div>
+  <div class="field">
+    <%= f.label :partnermember_id %><br>
+	<%= f.collection_select :partnermember_id, Partnermember.all, :id, :name %>
+  
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sagyouhoukoku_id: 1
+  atena: MyString
+  sashidashi: MyString
+  sumi: false
+  nengetsu: MyString
+
+two:
+  sagyouhoukoku_id: 1
+  atena: MyString
+  sashidashi: MyString
+  sumi: false
+  nengetsu: MyString

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shimeicode:</strong>
+  <%= @partnermember.shimeicode %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @partnermember.name %>
+</p>
+<p>
+  <strong>PartnerName:</strong>
+  <%= @partnermember.partner.name %>
+</p>
+
+<%= link_to 'Edit', edit_partnermember_path(@partnermember) %> |
+<%= link_to 'Back', partnermembers_path %>

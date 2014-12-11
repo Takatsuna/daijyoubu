@@ -1,0 +1,2 @@
+module SagyouhoukokusHelper
+end

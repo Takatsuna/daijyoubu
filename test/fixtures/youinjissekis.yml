@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  youinwariate_id: 1
+  sagyouhoukoku_id: 1
+  kadouhour: MyString
+  kadoumin: MyString
+  nengetsu: MyString
+
+two:
+  youinwariate_id: 1
+  sagyouhoukoku_id: 1
+  kadouhour: MyString
+  kadoumin: MyString
+  nengetsu: MyString

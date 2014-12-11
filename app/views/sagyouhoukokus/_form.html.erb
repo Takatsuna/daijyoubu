@@ -1,0 +1,50 @@
+<%= form_for(@sagyouhoukoku) do |f| %>
+  <% if @sagyouhoukoku.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sagyouhoukoku.errors.count, "error") %> prohibited this sagyouhoukoku from being saved:</h2>
+
+      <ul>
+      <% @sagyouhoukoku.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sagyoushiji_id %><br>
+    <<%= f.collection_select :sagyoushiji_id, Sagyoushiji.all, :id, :id %>
+  </div>
+  <div class="field">
+    <%= f.label :sagyoukakunin_id %><br>
+   <%= f.collection_select :sagyoukakunin_id, Sagyoukakunin.all, :id, :id %>
+  </div>
+  <div class="field">
+    <%= f.label :atena %><br>
+    <%= f.text_field :atena %>
+  </div>
+  <div class="field">
+    <%= f.label :sashidashi %><br>
+    <%= f.text_field :sashidashi %>
+  </div>
+  <div class="field">
+    <%= f.label :youinjisseki_id %><br>
+   あとでけす。いらなかった。
+
+  </div>
+  <div class="field">
+    <%= f.label :jisshinaiyou %><br>
+    <%= f.text_area :jisshinaiyou %>
+  </div>
+  <div class="field">
+    <%= f.label :sumi %><br>
+    <%= f.check_box :sumi %>
+  </div>
+  <div class="field">
+    <%= f.label :nengetsu %><br>
+    <%= f.text_field :nengetsu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

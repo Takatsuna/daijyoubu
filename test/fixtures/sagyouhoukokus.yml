@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sagyoushiji_id: 1
+  sagyoukakunin_id: 1
+  atena: MyString
+  sashidashi: MyString
+  youinjisseki_id: 1
+  jisshinaiyou: MyText
+  sumi: false
+  nengetsu: MyString
+
+two:
+  sagyoushiji_id: 1
+  sagyoukakunin_id: 1
+  atena: MyString
+  sashidashi: MyString
+  youinjisseki_id: 1
+  jisshinaiyou: MyText
+  sumi: false
+  nengetsu: MyString

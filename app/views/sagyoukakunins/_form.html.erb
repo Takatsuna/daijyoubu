@@ -1,0 +1,37 @@
+<%= form_for(@sagyoukakunin) do |f| %>
+  <% if @sagyoukakunin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sagyoukakunin.errors.count, "error") %> prohibited this sagyoukakunin from being saved:</h2>
+
+      <ul>
+      <% @sagyoukakunin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sagyouhoukoku_id %><br>
+   <%= f.collection_select :sagyouhoukoku_id, Sagyouhoukoku.all, :id, :id %>
+  </div>
+  <div class="field">
+    <%= f.label :atena %><br>
+    <%= f.text_field :atena %>
+  </div>
+  <div class="field">
+    <%= f.label :sashidashi %><br>
+    <%= f.text_field :sashidashi %>
+  </div>
+  <div class="field">
+    <%= f.label :sumi %><br>
+    <%= f.check_box :sumi %>
+  </div>
+  <div class="field">
+    <%= f.label :nengetsu %><br>
+    <%= f.text_field :nengetsu %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

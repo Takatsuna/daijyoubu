@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-<p><%= @gessyo %><br> <%=@getsumatsu%><br><%=@sa%></p>
 
 <p>
   <strong>Kessaibango:</strong>
@@ -36,8 +35,23 @@
   <%= @itakuhaken.partner.name %>
 </p>
 <hr>
-<h3>要員割当状況</h3>
+<h4>要員割当状況</h4>
 <%= render 'youinwariates/index'%>
 <hr>
+<h4>作業指示、作業報告、作業確認の状況</h4>
+
+<table border="1">
+	<tr>
+		<th>年月</th><th>印刷する日付</th><th>指示書</th><th>報告書</th><th>確認書</th>
+	</tr>
+	<% @sa.each do |k,v| %>
+	<tr>
+		<td><%= k %></td><td><%= v.to_era("%0%E年%m月%d日") %></td><td>未</td><td>未</td><td>未</td>
+	</tr>
+	<%end%>
+</table>
+<hr>
+
+
 <%= link_to 'Edit', edit_itakuhaken_path(@itakuhaken) %> |
 <%= link_to 'Back', itakuhakens_path %>

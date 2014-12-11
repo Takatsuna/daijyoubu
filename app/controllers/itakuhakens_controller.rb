@@ -14,16 +14,27 @@ class ItakuhakensController < ApplicationController
     
     #契約開始日の属する月初日もとめる
     @gessyo = @itakuhaken.start.beginning_of_month
-    #契約終了日の属する月末日もとめる
-    @getsumatsu = @itakuhaken.end.end_of_month
-    #当該期間の月数をもとめる
-    @sa = (@getsumatsu - @gessyo).to_i
-    
+    #契約終了日の属する月初日もとめる
+    @getsumatsu = @itakuhaken.end.beginning_of_month
+    #当該期間の月初日をハッシュに格納しながら１ヶ月ずつループする
+    @sa = {}
+    @tsuki = @gessyo
+    until @tsuki > @getsumatsu  do
+      @sa.store(@tsuki.strftime("%Y%m"),@tsuki) 
+      @tsuki = @tsuki + 1.month
+    end
+      
   end
 
   # GET /itakuhakens/new
   def new
     @itakuhaken = Itakuhaken.new
+    
+    2.times do
+      sagyoushiji = Sagyoushiji.new
+      @itakuhaken.sagyoushijis << sagyoushiji
+    end
+    
   end
 
   # GET /itakuhakens/1/edit
@@ -34,6 +45,7 @@ class ItakuhakensController < ApplicationController
   # POST /itakuhakens.json
   def create
     @itakuhaken = Itakuhaken.new(itakuhaken_params)
+
 
     respond_to do |format|
       if @itakuhaken.save

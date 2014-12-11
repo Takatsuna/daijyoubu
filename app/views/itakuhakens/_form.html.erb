@@ -39,6 +39,23 @@
     <%= f.label :partner_id %><br>
 	<%= f.collection_select :partner_id, Partner.all, :id, :name %>
   </div>
+  
+  <hr>
+  <% @itakuhaken.sagyoushijis.each do |sagyoushiji| %>
+  <%= f.fields_for :sagyoushijis, sagyoushiji do |sagyoushiji_field| %>
+  <div class="field">
+    <%= sagyoushiji_field.label :itakuhaken_id %><br>
+	<%= sagyoushiji_field.collection_select :itakuhaken_id, Itakuhaken.all, :id, :kessaikenmei %>
+  </div>
+  <div class="field">
+    <%= sagyoushiji_field.label :atena %><br>
+    <%= sagyoushiji_field.text_field :atena %>
+  </div>
+  <%end%>
+  <%end%>
+  
+  <hr>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

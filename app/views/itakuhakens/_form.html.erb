@@ -40,6 +40,11 @@
 	<%= f.collection_select :partner_id, Partner.all, :id, :name %>
   </div>
   
+  <div class="field">
+    <%= f.label :jisshinaiyou %><br>
+	<%= f.text_field :jisshinaiyou %>
+  </div>
+ 
   <hr>
   <% @itakuhaken.sagyoushijis.each do |sagyoushiji| %>
   <%= f.fields_for :sagyoushijis, sagyoushiji do |sagyoushiji_field| %>

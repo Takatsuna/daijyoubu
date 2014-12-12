@@ -11,30 +11,13 @@ class ItakuhakensController < ApplicationController
   # GET /itakuhakens/1.json
   def show
     @youinwariates = @itakuhaken.youinwariates.all
-    
-    #契約開始日の属する月初日もとめる
-    @gessyo = @itakuhaken.start.beginning_of_month
-    #契約終了日の属する月初日もとめる
-    @getsumatsu = @itakuhaken.end.beginning_of_month
-    #当該期間の月初日をハッシュに格納しながら１ヶ月ずつループする
-    @sa = {}
-    @tsuki = @gessyo
-    until @tsuki > @getsumatsu  do
-      @sa.store(@tsuki.strftime("%Y%m"),@tsuki) 
-      @tsuki = @tsuki + 1.month
-    end
-      
+    @sagyoushijis = @itakuhaken.sagyoushijis.all
+  
   end
 
   # GET /itakuhakens/new
   def new
-    @itakuhaken = Itakuhaken.new
-    
-    2.times do
-      sagyoushiji = Sagyoushiji.new
-      @itakuhaken.sagyoushijis << sagyoushiji
-    end
-    
+    @itakuhaken = Itakuhaken.new    
   end
 
   # GET /itakuhakens/1/edit
@@ -51,6 +34,23 @@ class ItakuhakensController < ApplicationController
       if @itakuhaken.save
         format.html { redirect_to @itakuhaken, notice: 'Itakuhaken was successfully created.' }
         format.json { render :show, status: :created, location: @itakuhaken }
+        
+        #契約開始日の属する月初日もとめる
+        @gessyo = @itakuhaken.start.beginning_of_month
+        #契約終了日の属する月初日もとめる
+        @getsumatsu = @itakuhaken.end.beginning_of_month
+        #当該期間の月初日をハッシュに格納しながら１ヶ月ずつループする
+        @sa = {}
+        @tsuki = @gessyo
+        until @tsuki > @getsumatsu  do
+          @sa.store(@tsuki.strftime("%Y%m"),@tsuki) 
+          @tsuki = @tsuki + 1.month
+        end
+        
+        @sa.each do |k,v|
+          Sagyoushiji.create(:itakuhaken_id =>@itakuhaken.id,:nengetsu =>k,:hakkoubi=>v,:jisshinaiyou=>@itakuhaken.jisshinaiyou,:sashidashi=>@itakuhaken.jyucyu.busyo.gl)
+        end
+        
       else
         format.html { render :new }
         format.json { render json: @itakuhaken.errors, status: :unprocessable_entity }
@@ -90,6 +90,6 @@ class ItakuhakensController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def itakuhaken_params
-      params.require(:itakuhaken).permit(:kessaibango, :kessaikenmei, :start, :end, :ukeireninzu, :jyucyu_id, :partner_id)
+      params.require(:itakuhaken).permit(:kessaibango, :kessaikenmei, :start, :end, :ukeireninzu, :jyucyu_id, :partner_id,:jisshinaiyou)
     end
 end

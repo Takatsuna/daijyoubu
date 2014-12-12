@@ -26,6 +26,11 @@
 </p>
 
 <p>
+  <strong>Jisshinaiyou:</strong>
+  <%= @itakuhaken.jisshinaiyou %>
+</p>
+
+<p>
   <strong>Jyucyu:</strong>
   <%= @itakuhaken.jyucyu.kenmei %>
 </p>
@@ -44,9 +49,9 @@
 	<tr>
 		<th>年月</th><th>印刷する日付</th><th>指示書</th><th>報告書</th><th>確認書</th>
 	</tr>
-	<% @sa.each do |k,v| %>
+	<% @sagyoushijis.each do |sagyoushiji| %>
 	<tr>
-		<td><%= k %></td><td><%= v.to_era("%0%E年%m月%d日") %></td><td>未</td><td>未</td><td>未</td>
+		<td><%= sagyoushiji.nengetsu %></td><td><%= sagyoushiji.hakkoubi.to_era("%0%E年%m月%d日") %></td><td>未</td><td>未</td><td>未</td>
 	</tr>
 	<%end%>
 </table>
